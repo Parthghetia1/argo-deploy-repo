@@ -229,33 +229,6 @@ spec:
     port: 8080
     targetPort: 8080
 ---
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
- - adservice.yaml
- - cartservice.yaml
- - checkoutservice.yaml
- - currencyservice.yaml
- - emailservice.yaml
- - frontend.yaml
-# - loadgenerator.yaml # During development, the loadgenerator module inside skaffold.yaml will be used.
- - paymentservice.yaml
- - productcatalogservice.yaml
- - recommendationservice.yaml
- - redis.yaml
- - shippingservice.yaml
-components:
-# - ../kustomize/components/cymbal-branding
-# - ../kustomize/components/google-cloud-operations
-# - ../kustomize/components/memorystore
-# - ../kustomize/components/network-policies
-# - ../kustomize/components/service-accounts
-# - ../kustomize/components/spanner
-# - ../kustomize/components/container-images-tag
-# - ../kustomize/components/container-images-tag-suffix
-# - ../kustomize/components/container-images-registry
-# - ../kustomize/components/native-grpc-health-check
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -286,7 +259,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: gcr.io/argo-gcp-gke/frontend@sha256:e1aa09d57832c6d2e27fb0d8916f87cb1caf3194bb44fd76cb9b39960d181063
+          image: gcr.io/argo-gcp-gke/frontend@sha256:76fa47cc73131616c998a71c210d87e9331e939ac1f5f9011064242d77cb7418
           ports:
           - containerPort: 8080
           readinessProbe:
