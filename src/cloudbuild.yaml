@@ -76,7 +76,7 @@ steps:
       sed "s/COMMIT_SHA/$(cat ./checksum.txt)/g" > kubernetes-manifests.yaml
 
 
-      cp kubernetes-manifests.yaml argo-deploy-repo/release/kubernetes.manifests.yaml
+      cp kubernetes-manifests.yaml argo-deploy-repo/release/kubernetes-manifests.yaml
       
       cd argo-deploy-repo/release/
       git config user.email $$GITHUB_EMAIL
