@@ -71,17 +71,17 @@ steps:
     - 'pipefail'
     - '-c'
     - |-
-      git clone https://github.com/$$GITHUB_USERNAME/argo-deploy-repo
+      git clone https://github.com/$$GITHUB_USERNAME/argo-manifests
       sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" frontend.yaml.tpl | \
       sed "s/COMMIT_SHA/$(cat ./checksum.txt)/g" > kubernetes-manifests.yaml
 
 
-      cp kubernetes-manifests.yaml argo-deploy-repo/release/kubernetes-manifests.yaml
+      cp kubernetes-manifests.yaml argo-manifests/release/kubernetes-manifests.yaml
       
-      cd argo-deploy-repo/release/
+      cd argo-manifests/release/
       git config user.email $$GITHUB_EMAIL
       git config user.name $$GITHUB_USERNAME
-      git remote set-url origin https://$$GITHUB_USERNAME:$$GITHUB_TOKEN@github.com/$$GITHUB_USERNAME/argo-deploy-repo.git
+      git remote set-url origin https://$$GITHUB_USERNAME:$$GITHUB_TOKEN@github.com/$$GITHUB_USERNAME/argo-manifests.git
 
       
       
