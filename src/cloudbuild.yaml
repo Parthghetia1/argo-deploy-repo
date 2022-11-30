@@ -5,7 +5,7 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/frontend:latest'
-      - '.'
+      - '/src/'
   # - id: 'scan'
   #   name: gcr.io/google.com/cloudsdktool/cloud-sdk
   #   entrypoint: /bin/bash
@@ -81,7 +81,7 @@ steps:
       cd argo-deploy-repo/release/
       git config user.email $$GITHUB_EMAIL
       git config user.name $$GITHUB_USERNAME
-      git remote set-url origin https://$$GITHUB_USERNAME:$$GITHUB_TOKEN@github.com/$$GITHUB_USERNAME/config-source.git
+      git remote set-url origin https://$$GITHUB_USERNAME:$$GITHUB_TOKEN@github.com/$$GITHUB_USERNAME/argo-deploy-repo.git
 
       
       
