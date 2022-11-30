@@ -5,7 +5,8 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/frontend:latest'
-      - '/src/.'
+      - '-f'
+      - 'argo-deploy-repo/src/'
   # - id: 'scan'
   #   name: gcr.io/google.com/cloudsdktool/cloud-sdk
   #   entrypoint: /bin/bash
