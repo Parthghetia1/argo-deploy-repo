@@ -3,6 +3,8 @@ steps:
     name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
+      - '-f'
+      - '/src/Dockerfile'
       - '-t'
       - 'gcr.io/$PROJECT_ID/frontend:latest'
       - '.'
