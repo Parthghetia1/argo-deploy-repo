@@ -286,7 +286,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: gcr.io/argo-gcp-gke/frontend@sha256:0d24e93abc9e7ab77d9e84c203556b5eb5bcf0beb66657c324063d1b7c7476ac
+          image: gcr.io/argo-gcp-gke/frontend@sha256:1a28acec8ada860d20ae88bdc531f69cd4a04772220d46cb98b2a15fcc2edaba
           ports:
           - containerPort: 8080
           readinessProbe:
